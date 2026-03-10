@@ -1,91 +1,118 @@
-/*
- * Stylesheet for the Cautaerts Baukonzepte Onepager
- *
- * This file defines the visual appearance of the website. It uses a
- * clean layout with plenty of white space, strong typography and
- * subtle accent colours taken from the company’s branding. All sections
- * are mobile‑friendly and scale gracefully from phones to large
- * desktops.
- */
+:root {
+    --brand: #8B1E1E;
+    --brand-dark: #6E1414;
+    --brand-soft: #f6eeee;
+    --sand: #f8f5f3;
+    --text: #2d2524;
+    --white: #ffffff;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
 
 html, body {
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: var(--text);
     scroll-behavior: smooth;
+    background: var(--white);
 }
 
-/* Global container spacing */
+img {
+    max-width: 100%;
+    display: block;
+}
+
 .section {
     padding: 4rem 1rem;
     max-width: 1100px;
     margin: 0 auto;
 }
 
+.section-intro {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 2rem;
+}
+
+.section-intro.narrow {
+    max-width: 700px;
+}
+
+.section-kicker {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--brand);
+    margin-bottom: 0.8rem;
+}
+
 h1, h2 {
-    font-weight: 600;
     margin-top: 0;
-    color: #0a427b;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    margin-bottom: 0.5rem;
+    color: var(--white);
+}
+
+h2 {
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    color: var(--brand-dark);
+    margin-bottom: 0.7rem;
 }
 
 /* Hero section */
 .hero {
     position: relative;
-    background-image: url('images/paving.jpg');
+    background-image: url('paving.jpg');
     background-size: cover;
     background-position: center;
-    min-height: 70vh;
+    min-height: 75vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #fff;
+    color: var(--white);
 }
 
-/* dark overlay on hero image */
 .hero .overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
+    inset: 0;
+    background: linear-gradient(rgba(139, 30, 30, 0.75), rgba(88, 20, 20, 0.75));
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
     max-width: 700px;
+    padding: 2rem 1rem;
 }
 
-.hero .logo {
-    width: 200px;
+.logo {
+    width: min(220px, 55vw);
     height: auto;
-    margin-bottom: 1rem;
-    /* Add a subtle white background behind the logo to mask any transparency
-       pattern that might be visible in the source image. */
-    background-color: rgba(255, 255, 255, 0.8);
+    margin: 0 auto 1rem;
+    background: rgba(255,255,255,0.9);
     padding: 0.5rem;
     border-radius: 8px;
+    box-shadow: var(--shadow);
 }
 
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.hero .tagline {
+.tagline {
     font-size: 1.4rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
 
-.hero .subtitle {
+.subtitle {
     font-size: 1rem;
     margin-bottom: 1.5rem;
+    color: rgba(255,255,255,0.92);
 }
 
 .cta-buttons {
@@ -93,37 +120,58 @@ h1, h2 {
     justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
+    margin-top: 0.5rem;
 }
 
 .btn {
     padding: 0.75rem 1.5rem;
-    border-radius: 4px;
+    border-radius: 30px;
     text-decoration: none;
     font-weight: 600;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
 }
 
 .btn.primary {
-    background-color: #0a427b;
-    color: #fff;
+    background-color: var(--brand);
+    color: var(--white);
+    border-color: var(--brand);
 }
+
 .btn.primary:hover {
-    background-color: #082f55;
+    background-color: var(--brand-dark);
+    border-color: var(--brand-dark);
 }
 
 .btn.secondary {
-    background-color: #fff;
-    color: #0a427b;
-    border: 2px solid #0a427b;
+    background-color: rgba(255,255,255,0.1);
+    color: var(--white);
+    border: 2px solid rgba(255,255,255,0.8);
 }
+
 .btn.secondary:hover {
-    background-color: #0a427b;
-    color: #fff;
+    background-color: var(--white);
+    color: var(--brand-dark);
+    border-color: var(--white);
+}
+
+.social {
+    margin-top: 1rem;
+}
+
+.social img {
+    width: 36px;
+    height: 36px;
+    transition: transform 0.2s ease;
+}
+
+.social img:hover {
+    transform: scale(1.1);
 }
 
 /* Services */
 .services {
-    background-color: #f9f9f9;
+    background-color: var(--sand);
     text-align: center;
 }
 
@@ -132,68 +180,85 @@ h1, h2 {
     padding: 0;
     margin: 2rem 0 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 1rem;
 }
 
 .service-list li {
-    background-color: #fff;
+    background-color: var(--white);
     padding: 1rem;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
     font-weight: 500;
 }
 
 /* About */
 .about {
+    background-color: var(--white);
     text-align: center;
 }
 
-.about p {
-    max-width: 700px;
-    margin: 0 auto 1.5rem;
-    font-size: 1rem;
-}
-
-.benefits {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1rem;
+    margin-top: 2rem;
 }
 
-.benefits li {
-    background-color: #f9f9f9;
-    padding: 0.75rem 1rem;
-    border-radius: 4px;
+.benefit-card {
+    background-color: var(--brand-soft);
+    padding: 1rem;
+    border-radius: 12px;
     font-weight: 500;
+    box-shadow: var(--shadow);
 }
 
 /* Gallery */
 .gallery {
-    background-color: #f9f9f9;
+    background-color: var(--brand-soft);
     text-align: center;
 }
 
 .gallery-grid {
     margin-top: 2rem;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 1rem;
 }
 
-.gallery-grid img {
+.gallery-card {
+    margin: 0;
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    min-height: 200px;
+}
+
+.gallery-card img {
     width: 100%;
-    height: auto;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-link {
+    text-align: center;
+    margin-top: 1.4rem;
+}
+
+.gallery-link a {
+    color: var(--brand);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.gallery-link a:hover {
+    text-decoration: underline;
 }
 
 /* Contact */
 .contact {
+    background-color: var(--white);
     text-align: center;
 }
 
@@ -206,7 +271,7 @@ h1, h2 {
 }
 
 .contact-info a {
-    color: #0a427b;
+    color: var(--brand);
     text-decoration: none;
 }
 
@@ -216,33 +281,34 @@ h1, h2 {
 
 /* Footer */
 .footer {
-    background-color: #0a427b;
-    color: #fff;
+    background-color: var(--brand-dark);
+    color: rgba(255,255,255,0.9);
     text-align: center;
     padding: 2rem 1rem;
     font-size: 0.9rem;
 }
 
 .footer a {
-    color: #fff;
+    color: var(--white);
     text-decoration: underline;
 }
+
 .footer a:hover {
-    color: #fca311;
+    color: var(--brand);
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-    .hero .tagline {
-        font-size: 1.2rem;
-    }
-    .hero .subtitle {
-        font-size: 0.9rem;
-    }
     .section {
         padding: 3rem 1rem;
+    }
+    .hero {
+        min-height: 65vh;
+    }
+    .tagline {
+        font-size: 1.2rem;
+    }
+    .subtitle {
+        font-size: 0.95rem;
     }
 }
