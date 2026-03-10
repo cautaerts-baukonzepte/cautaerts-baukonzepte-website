@@ -95,13 +95,12 @@ h2 {
 }
 
 .logo {
-    width: min(220px, 55vw);
+    /* Make the logo larger on desktop and remove the white card behind it */
+    width: min(420px, 70vw);
     height: auto;
     margin: 0 auto 1rem;
-    background: rgba(255,255,255,0.9);
-    padding: 0.5rem;
-    border-radius: 8px;
-    box-shadow: var(--shadow);
+    /* Add a subtle white glow so the logo stands out on the hero background */
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
 }
 
 .tagline {
