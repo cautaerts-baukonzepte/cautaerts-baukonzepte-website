@@ -83,7 +83,8 @@ h2 {
 .hero .overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(rgba(139, 30, 30, 0.75), rgba(88, 20, 20, 0.75));
+    /* Use a neutral dark overlay instead of the red gradient */
+    background: rgba(0, 0, 0, 0.45);
 }
 
 .hero-content {
