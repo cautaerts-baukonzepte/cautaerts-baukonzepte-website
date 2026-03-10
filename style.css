@@ -1,0 +1,248 @@
+/*
+ * Stylesheet for the Cautaerts Baukonzepte Onepager
+ *
+ * This file defines the visual appearance of the website. It uses a
+ * clean layout with plenty of white space, strong typography and
+ * subtle accent colours taken from the company’s branding. All sections
+ * are mobile‑friendly and scale gracefully from phones to large
+ * desktops.
+ */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* Global container spacing */
+.section {
+    padding: 4rem 1rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    font-weight: 600;
+    margin-top: 0;
+    color: #0a427b;
+}
+
+/* Hero section */
+.hero {
+    position: relative;
+    background-image: url('images/paving.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+/* dark overlay on hero image */
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+}
+
+.hero .logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 1rem;
+    /* Add a subtle white background behind the logo to mask any transparency
+       pattern that might be visible in the source image. */
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero .tagline {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.hero .subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn.primary {
+    background-color: #0a427b;
+    color: #fff;
+}
+.btn.primary:hover {
+    background-color: #082f55;
+}
+
+.btn.secondary {
+    background-color: #fff;
+    color: #0a427b;
+    border: 2px solid #0a427b;
+}
+.btn.secondary:hover {
+    background-color: #0a427b;
+    color: #fff;
+}
+
+/* Services */
+.services {
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.service-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.service-list li {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    font-weight: 500;
+}
+
+/* About */
+.about {
+    text-align: center;
+}
+
+.about p {
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+    font-size: 1rem;
+}
+
+.benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.benefits li {
+    background-color: #f9f9f9;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+/* Gallery */
+.gallery {
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.gallery-grid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Contact */
+.contact {
+    text-align: center;
+}
+
+.contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.contact-info a {
+    color: #0a427b;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+    background-color: #0a427b;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+.footer a:hover {
+    color: #fca311;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero .tagline {
+        font-size: 1.2rem;
+    }
+    .hero .subtitle {
+        font-size: 0.9rem;
+    }
+    .section {
+        padding: 3rem 1rem;
+    }
+}
