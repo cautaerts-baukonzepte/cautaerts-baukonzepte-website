@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Background rounded square -->
+  <rect x="10" y="10" width="80" height="80" rx="20" ry="20" fill="#8B1E1E"/>
+  <!-- Inner circle for camera lens -->
+  <circle cx="50" cy="50" r="25" fill="#ffffff"/>
+  <!-- Small circle for camera flash -->
+  <circle cx="70" cy="30" r="5" fill="#ffffff"/>
+</svg>
