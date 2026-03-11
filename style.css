@@ -327,12 +327,14 @@ h2 {
     position: fixed;
     bottom: 25px;
     right: 25px;
+    left: auto;
     width: 60px;
     height: 60px;
-    z-index: 999;
+    z-index: 9999;
 }
 
 .whatsapp-button img {
-    width: 100%;
-    height: 100%;
+    width: 60px;
+    height: 60px;
+    display: block;
 }
