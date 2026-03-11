@@ -84,7 +84,7 @@ h2 {
     position: absolute;
     inset: 0;
     /* Use a neutral dark overlay instead of the red gradient */
-    background: rgba(0, 0, 0, 0.55);
+    background: rgba(0, 0, 0, 0.65);
 }
 
 .hero-content {
